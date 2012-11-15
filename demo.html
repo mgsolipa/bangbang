@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bang Bang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/jquery.bangbang.js"></script>
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/jquery.bangbang.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="page-header">
+           <h2>Bang Bang!</h2>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <form accept-charset="UTF-8" action="/advanced_search" class="form-search" id="advanced_search_clinic_form" method="get" onsubmit="return false">
+              <div class="alert alert-info">
+                <strong>Bang Bang!</strong>
+                <a href="#" class="close" data-dismiss="alert">×</a>
+                <br>
+                Start by typing ! Then selecting a command to search by from the list using your arrow keys or typing the full command and hitting space. <br> For more help click the Advanced Search Help Link below.
+              </div>
+              <div class="tag_control">
+                <input autocomplete="off" class="none" id="advanced_search_clinic_txt" name="search" type="search" value="">
+              </div>
+              <br><br>
+              <div class="pull-right btn btn-primary" id="search_button">Search</div>
+              <br><br>
+              <a href="" class="help_link">Advanced Search Help</a>
+              <br><br>
+              <div class="span11 help" style="display:none">
+                <div class="well">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Search by</th>
+                        <th>Command</th>
+                        <th>Example</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>First name</td>
+                      <td>!fn</td>
+                      <td>!fn John</td>
+                    </tr>
+                    <tr>
+                      <td>Last name</td>
+                      <td>!ln</td>
+                      <td>!ln Smith</td>
+                    </tr>
+                    <tr>
+                      <td>Clinic Name</td>
+                      <td>!cn</td>
+                      <td>!cn Arra Test Clinic</td>
+                    </tr>
+                    <tr>
+                      <td>User with Email</td>
+                      <td>!email</td>
+                      <td>!email jsmith@futurehealthsoftware.com</td>
+                    </tr>
+                    <tr>
+                      <td>User with Username</td>
+                      <td>!username</td>
+                      <td>!username jsmith</td>
+                    </tr>
+                    <tr>
+                      <td>Clinic Address</td>
+                      <td>!addr</td>
+                      <td>!addr 1234 2nd ST.</td>
+                    </tr>
+                    <tr>
+                      <td>Clinic Address Two</td>
+                      <td>!addr2</td>
+                      <td>!addr2 Apt. 1234.</td>
+                    </tr>
+                  <tr>
+                    <td>Clinic City</td> 
+                    <td>!city</td>
+                    <td>!city Urbandale</td>
+                  </tr>
+                  <tr>
+                    <td>Clinic State</td> 
+                    <td>!state</td>
+                    <td>!state IA</td>
+                  </tr>
+                  <tr>
+                    <td>Clinic Zip</td> 
+                    <td>!zip</td>
+                    <td>!zip 50169</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
