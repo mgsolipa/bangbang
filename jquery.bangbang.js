@@ -147,7 +147,7 @@ BANG.Bang = function(el, options) {
     }
 
     $("." + cmd_count + ":last").focus();
-    $("." + cmd_count + ":last").tag({ tags: options.tags, count: cmd_count });
+    $("." + cmd_count + ":last").bang({ tags: options.tags, count: cmd_count });
   }
 
   function removeTag() {
@@ -160,7 +160,7 @@ BANG.Bang = function(el, options) {
     } else {
       $("#" + id).remove();
       $(el).remove();
-      $(el).tag = null;
+      $(el).bang = null;
       $(".bang_control").unbind("click");
 
       if($(".bang_control input:last").prev().length == 0) {
