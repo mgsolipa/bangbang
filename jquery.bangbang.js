@@ -116,7 +116,7 @@ TIGGER.BangBang = function(el, options) {
 
     var tagHtml = "<div class='btn btn-mini btn-primary' id='" + cmd_count + "'>";
         tagHtml += command;
-        tagHtml += " <i class='icon-remove'></i>";
+        tagHtml += " <i class='icon-remove icon-white'></i>";
         tagHtml += "</div>";
         tagHtml += "<input type='text' class='" + cmd_count + "' id='" + command + "' name='" + command + "'/>";
         tagHtml += "<script language='text/javascript'>";

@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://willywos.github.com/bangbang/jquery.bangbang.js"></script>
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="http://willywos.github.com/bangbang/jquery.bangbang.css" rel="stylesheet">
+    <script src="http://willywos.github.com/bangbang/jquery.bangbang.js"></script>
   </head>
   <body>
     <div class="container">
@@ -57,14 +57,9 @@
                       <td>!ln Smith</td>
                     </tr>
                     <tr>
-                      <td>Clinic Name</td>
-                      <td>!cn</td>
-                      <td>!cn Arra Test Clinic</td>
-                    </tr>
-                    <tr>
                       <td>User with Email</td>
                       <td>!email</td>
-                      <td>!email jsmith@futurehealthsoftware.com</td>
+                      <td>!email jsmith@email.com</td>
                     </tr>
                     <tr>
                       <td>User with Username</td>
@@ -72,27 +67,27 @@
                       <td>!username jsmith</td>
                     </tr>
                     <tr>
-                      <td>Clinic Address</td>
+                      <td>Address</td>
                       <td>!addr</td>
                       <td>!addr 1234 2nd ST.</td>
                     </tr>
                     <tr>
-                      <td>Clinic Address Two</td>
+                      <td>Address Two</td>
                       <td>!addr2</td>
                       <td>!addr2 Apt. 1234.</td>
                     </tr>
                   <tr>
-                    <td>Clinic City</td> 
+                    <td>City</td> 
                     <td>!city</td>
                     <td>!city Urbandale</td>
                   </tr>
                   <tr>
-                    <td>Clinic State</td> 
+                    <td>State</td> 
                     <td>!state</td>
                     <td>!state IA</td>
                   </tr>
                   <tr>
-                    <td>Clinic Zip</td> 
+                    <td>Zip</td> 
                     <td>!zip</td>
                     <td>!zip 50169</td>
                   </tr>
@@ -104,6 +99,36 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $(".help_link").click(function(e) {
+          e.preventDefault();
+          $(".help").slideToggle();
+        });
+
+        var tags = [
+          "fn",
+          "ln",
+          "email",
+          "username",
+          "addr",
+          "addr2",
+          "city",
+          "state",
+          "zip"
+        ];
+
+        $("#advanced_search_clinic_txt").tag({ tags: tags });
+
+        $("#search_button").click(function(e) {
+          e.preventDefault();
+          $("#advanced_search_clinic_form").removeAttr("onsubmit");
+          $("#advanced_search_clinic_form").submit();
+        });
+
+      });
+    </script>
   </body>
 </html>
 
