@@ -20,15 +20,16 @@
         </div>
         <div class="row">
           <div class="span12">
-            <form accept-charset="UTF-8" action="/" class="form-search" id="advanced_search_clinic_form" method="get" onsubmit="return false">
-              <div class="alert alert-info">
-                <strong>Bang Bang!</strong>
+            <h4>Demo</h4>
+            <form accept-charset="UTF-8" action="/" class="form-search" id="form" method="get" onsubmit="return false">
+              <div class="alert alert-block">
                 <a href="#" class="close" data-dismiss="alert">×</a>
+                <h4>Bang Bang!</h4>
                 <br>
-                Start by typing ! Then selecting a command to search by from the list using your arrow keys or typing the full command and hitting space. <br> For more help click the Advanced Search Help Link below.
+                Start by typing <strong>!</strong> Then selecting a command to search by from the list using your arrow keys or typing the full command and hitting space. <br> For more help click the Advanced Search Help Link below.
               </div>
               <div class="tag_control">
-                <input autocomplete="off" class="none" id="advanced_search_clinic_txt" name="search" type="search" value="">
+                <input autocomplete="off" class="none" id="search_txt" name="search" type="search" value="">
               </div>
               <br><br>
               <div class="pull-right btn btn-primary" id="search_button">Search</div>
@@ -97,6 +98,52 @@
             </div>
           </form>
         </div>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <h4>What is this?</h4>
+            Bang Bang is a way to group inputs on a single input field.
+            It's sort of like how tags work except differently. It was
+            originally written for our advanced search functionality.
+            The goal was a simple way to provide our support team with
+            a fast way to search for information and not have them click
+            a bunch of buttons, and checkboxes to filter their search
+            criteria.
+            <br><br>
+            <h4>Why is it called Bang Bang?</h4>
+            Because of the exclamation point ! is what triggers the
+            commands.
+            <br><br>
+            <h4>Does it work with bootstrap?</h4>
+            Yes, it should work with version 2.2.1
+            <br><br>
+            <h4>How does it work?</h4>
+            When you type ! followed by the command, a new text input
+            field is added to the form with the name of the command. It
+            doesn't look like it from the UI but it happens behind the
+            scenes.
+
+            You can call the jquery plugin with a list of tags like
+            this:<br><br>
+            <pre>
+
+var tags = [
+  "fn",
+  "ln",
+  "email",
+  "username",
+  "addr",
+  "addr2",
+  "city",
+  "state",
+  "zip"
+];
+
+$("#search_txt").tag({ tags: tags });
+
+            </pre>
+          </div>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
@@ -119,14 +166,13 @@
           "zip"
         ];
 
-        $("#advanced_search_clinic_txt").tag({ tags: tags });
+        $("#search_txt").tag({ tags: tags });
 
         $("#search_button").click(function(e) {
           e.preventDefault();
-          $("#advanced_search_clinic_form").removeAttr("onsubmit");
-          $("#advanced_search_clinic_form").submit();
+          $("#form").removeAttr("onsubmit");
+          $("#form").submit();
         });
-
       });
     </script>
   </body>
