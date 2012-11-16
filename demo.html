@@ -133,6 +133,13 @@
             this:<br><br>
             <pre>
 
+
+<form accept-charset="UTF-8" class="form-search" id="form" method="get" onsubmit="return false">
+  <div class="bang_control">
+    <input autocomplete="off" class="none" id="search_txt" name="search" type="search" value="">
+  </div>
+</form>
+
 var tags = [
   "fn",
   "ln",
@@ -145,7 +152,7 @@ var tags = [
   "zip"
 ];
 
-$("#search_txt").tag({ tags: tags });
+$("#search_txt").bang({ tags: tags });
 
             </pre>
           </div>
