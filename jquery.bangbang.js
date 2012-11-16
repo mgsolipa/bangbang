@@ -114,7 +114,7 @@ TIGGER.BangBang = function(el, options) {
   function addTag(command) {
     cmd_count = cmd_count + 1;
 
-    var tagHtml = "<div class='btn btn-mini btn-primary' id='" + cmd_count + "'>";
+    var tagHtml = "<div class='btn btn-primary' id='" + cmd_count + "'>";
         tagHtml += command;
         tagHtml += " <i class='icon-remove icon-white'></i>";
         tagHtml += "</div>";
