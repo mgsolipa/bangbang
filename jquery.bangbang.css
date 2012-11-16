@@ -26,18 +26,18 @@
   font-weight: bold;
 }
 
-.tag_control {
+.bang_control {
   width: 99%;
   border: 1px solid #CCCCCC;
   padding: 2px;
   cursor: text;
 }
 
-.tag_control:hover {
+.bang_control:hover {
   cursor: text;
 }
 
-.tag_control input {
+.bang_control input {
   background: none transparent; 
   border: none;
   outline: none;
@@ -45,7 +45,7 @@
   box-shadow: none;
 }
 
-.tag_control input:focus{
+.bang_control input:focus{
   background: none transparent; 
   border: none;
   outline: none;
@@ -54,8 +54,3 @@
   -moz-appearance: none;
   box-shadow: none;
 }
-
-.tag {
-
-}
-

@@ -1,8 +1,8 @@
 
 
-var TIGGER = TIGGER || {};
+var BANG = BANG || {};
 
-TIGGER.BangBang = function(el, options) {
+BANG.Bang = function(el, options) {
 
   this.options  = options;
   this.parent   = $(el).parent();
@@ -14,7 +14,7 @@ TIGGER.BangBang = function(el, options) {
   var cmd_count = options.count || 0;
   var extra = "";
 
-  this.tagInputKey = function(e) {
+  this.bangInputKey = function(e) {
 
     if(banged) {
       if(e.keyCode == 8) {
@@ -100,7 +100,7 @@ TIGGER.BangBang = function(el, options) {
   }
 
   //clicks out of the box
-  this.tagBlur = function(e) {
+  this.bangBlur = function(e) {
     if(banged) {
       resetListOfTags();
     }
@@ -161,12 +161,12 @@ TIGGER.BangBang = function(el, options) {
       $("#" + id).remove();
       $(el).remove();
       $(el).tag = null;
-      $(".tag_control").unbind("click");
+      $(".bang_control").unbind("click");
 
-      if($(".tag_control input:last").prev().length == 0) {
-        $(".tag_control input").focus();
+      if($(".bang_control input:last").prev().length == 0) {
+        $(".bang_control input").focus();
       } else {
-        $(".tag_control input:last").prev().focus();
+        $(".bang_control input:last").prev().focus();
       }
     }
   }
@@ -236,7 +236,7 @@ TIGGER.BangBang = function(el, options) {
       return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
   };
 
-  $.fn.tag = function(options) {
+  $.fn.bang = function(options) {
     options = options || {};
 	
     var focused = true;
@@ -270,26 +270,26 @@ TIGGER.BangBang = function(el, options) {
         }, 1);
     }
 
-    var tag = new TIGGER.BangBang(this, options);
+    var bangbang = new BANG.Bang(this, options);
     $(this).keydown(function(e) {
-      tag.tagInputKey(e);
+      bangbang.bangInputKey(e);
     });
 
     $(this).blur(function(e) {
-      tag.tagBlur();
+      bangbang.bangBlur();
     });
 
-    $(".tag_control input").click(function() {
+    $(".bang_control input").click(function() {
       $(this).focus();
       return false;
     });
 
-    $(".tag_control").click(function(e) {
+    $(".bang_control").click(function(e) {
       e.stopPropagation();
-      if($(".tag_control input").length <= 1) {
-        $(".tag_control input:last").focus();
+      if($(".bang_control input").length <= 1) {
+        $(".bang_control input:last").focus();
       } else {
-        $(".tag_control input:last").prev().focus();
+        $(".bang_control input:last").prev().focus();
       } 
     });
   };
