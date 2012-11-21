@@ -39,6 +39,7 @@ BANG.Bang = function(el, options) {
             addTag(selected);
           }
           resetListOfTags();
+          return false;
         }
       } else {
         command += String.fromCharCode(e.keyCode).toLowerCase().trim();
@@ -52,10 +53,12 @@ BANG.Bang = function(el, options) {
       showListOfTags();
     }
 
-    //enter key is pressed do not submit form.
+    //enter key is pressed
     if(e.keyCode == 13) {
       if(banged) {
         e.preventDefault();
+      } else {
+        $(el).closest("form").submit();
       }
     }
 

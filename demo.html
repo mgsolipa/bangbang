@@ -27,7 +27,7 @@
         <div class="row">
           <div class="span12">
             <br><br>
-            <form accept-charset="UTF-8" class="form-search" id="form" method="get" onsubmit="return false">
+            <form accept-charset="UTF-8" class="form-search" id="form" method="get">
               <div class="alert alert-block">
                 <a href="#" class="close" data-dismiss="alert">×</a>
                 <h4>Instructions</h4>
@@ -149,7 +149,7 @@
     &lt;script src=&quot;http://willywos.github.com/bangbang/jquery.bangbang.js&quot;&gt;&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;form accept-charset=&quot;UTF-8&quot; class=&quot;form-search&quot; id=&quot;form&quot; method=&quot;get&quot; onsubmit=&quot;return false&quot;&gt;
+    &lt;form accept-charset=&quot;UTF-8&quot; class=&quot;form-search&quot; id=&quot;form&quot; method=&quot;get&quot;&gt;
       &lt;div class=&quot;bang_control&quot;&gt;
         &lt;input autocomplete=&quot;off&quot; class=&quot;none&quot; id=&quot;search_txt&quot; name=&quot;search&quot; type=&quot;search&quot; value=&quot;&quot;&gt;
       &lt;/div&gt;
@@ -205,7 +205,6 @@
 
         $("#search_button").click(function(e) {
           e.preventDefault();
-          $("#form").removeAttr("onsubmit");
           $("#form").submit();
         });
       });
