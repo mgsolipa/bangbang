@@ -43,6 +43,7 @@
   outline: none;
   outline-width: 0;
   box-shadow: none;
+  height: 25px;
 }
 
 .bang_control input:focus{
