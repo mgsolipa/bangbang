@@ -28,7 +28,7 @@ BANG.Bang = function(el, options) {
       } else if(this.enterKeyPressed(keyCode)) {
         e.preventDefault();
         if(liSelected) {
-          selected = liSelected.text();
+          selected = liSelected.attr('id');
           if(this.isCommand(selected)) {
             extra = command;
             this.addTag(selected);
@@ -148,6 +148,11 @@ BANG.Bang = function(el, options) {
   this.isCommand = function(command) {
     return $.inArray(command, options.tags) == -1 ? false : true;
   }
+  
+  this.getCommandTitle = function(command) {
+    var index = options.tags.indexOf(command);
+    return options.tagsTitles[index];
+  }
 
   this.addTag = function(command) {
     cmd_count = cmd_count + 1;
@@ -173,12 +178,12 @@ BANG.Bang = function(el, options) {
     }
 
     $("." + cmd_count + ":last").focus();
-    $("." + cmd_count + ":last").bang({ tags: options.tags, count: cmd_count });
+    $("." + cmd_count + ":last").bang({ tags: options.tags, tagsTitles: options.tagsTitles, count: cmd_count });
   }
 
   this.addTagHtml = function(command, cmd_count) {
     var tagHtml = "<div class='btn btn-primary' id='" + cmd_count + "'>";
-        tagHtml += command;
+        tagHtml += this.getCommandTitle(command);
         tagHtml += " <i class='icon-remove icon-white'></i>";
         tagHtml += "</div>";
         tagHtml += "<input type='text' autocomplete='off' class='" + cmd_count + "' id='" + command + "' name='" + command + "'/>";
@@ -262,13 +267,13 @@ BANG.Bang = function(el, options) {
   };
 
   this.showListOfTags = function() {
-    $(el).parent().after(this.showTagHtml(options.tags));
+    $(el).parent().after(this.showTagHtml(options.tags,options.tagsTitles));
   };
 
-  this.showTagHtml = function(tags) {
+  this.showTagHtml = function(tags,tagsTitles) {
     var tagsHtml = "<ul class='tag_list span11'>";
     for(var i = 0; i < tags.length; i++) {
-      tagsHtml += "<li><a href='#" + tags[i] + "'>" + tags[i] + "</a></li>";
+      tagsHtml += "<li id='" + tags[i] + "'><a href='#" + tags[i] + "'>" + tagsTitles[i] + "</a></li>";
     }
     tagsHtml += "</ul>";
     return tagsHtml;
