@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="http://willywos.github.com/bangbang/jquery.bangbang.css" rel="stylesheet">
-    <script src="http://willywos.github.com/bangbang/jquery.bangbang.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery.bangbang.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="assets/css/jquery.bangbang.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -29,7 +29,6 @@
             <br><br>
             <form accept-charset="UTF-8" class="form-search" id="form" method="get">
               <div class="alert alert-block">
-                <a href="#" class="close" data-dismiss="alert">×</a>
                 <h4>Instructions</h4>
                 <br>
                 Start by typing <strong>!</strong> Then selecting a command to search by from the list using your arrow keys or typing the full command and hitting space. <br> For more help click the Advanced Search Help Link below.
@@ -131,10 +130,8 @@
 
             You can call the jquery plugin with a list of tags like
             this:<br><br>
-            <pre>
 
-
-&lt;!DOCTYPE html&gt;
+            <pre>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -157,51 +154,73 @@
 
     &lt;script type=&quot;text/javascript&quot;&gt;
       $(document).ready(function() {
-        var tags = [
-          &quot;fn&quot;,
-          &quot;ln&quot;,
-          &quot;email&quot;,
-          &quot;username&quot;,
-          &quot;addr&quot;,
-          &quot;addr2&quot;,
-          &quot;city&quot;,
-          &quot;state&quot;,
-          &quot;zip&quot;
-        ];
-        $(&quot;#search_txt&quot;).bang({ tags: tags });
-      });
-    &lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-
-
-
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-      $(document).ready(function() {
-
         $(".help_link").click(function(e) {
           e.preventDefault();
           $(".help").slideToggle();
         });
 
         var tags = [
-          "fn",
-          "ln",
-          "email",
-          "username",
-          "addr",
-          "addr2",
-          "city",
-          "state",
-          "zip"
+          "idnumber",
+          "f_name",
+          "m_name",
+          "l_name",
+          "gender",
+          "test1",
+          "test2"
         ];
+        
+        var tagsTitles = [
+          "ID Number",
+          "First name",
+          "Middle name",
+          "Last name",
+          "Gender",
+          "Long tag test 1",
+          "Long tag test 2"
+        ];
+        
+        $("#search_txt").bang({ tags: tags, tagsTitles: tagsTitles });
 
-        $("#search_txt").bang({ tags: tags });
+        $("#search_button").click(function(e) {
+          e.preventDefault();
+          $("#form").submit();
+        });
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".help_link").click(function(e) {
+          e.preventDefault();
+          $(".help").slideToggle();
+        });
+
+        var tags = [
+          "idnumber",
+          "f_name",
+          "m_name",
+          "l_name",
+          "gender",
+          "test1",
+          "test2"
+        ];
+        
+        var tagsTitles = [
+          "ID Number",
+          "First name",
+          "Middle name",
+          "Last name",
+          "Gender",
+          "Long tag test 1",
+          "Long tag test 2"
+        ];
+        
+        $("#search_txt").bang({ tags: tags, tagsTitles: tagsTitles });
 
         $("#search_button").click(function(e) {
           e.preventDefault();
@@ -211,5 +230,3 @@
     </script>
   </body>
 </html>
-
-
